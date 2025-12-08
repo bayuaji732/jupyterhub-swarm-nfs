@@ -128,6 +128,8 @@ c.Authenticator.admin_users = {"danger", "eggs"}
 c.SharedPasswordAuthenticator.admin_password = "extra-super-secret-secure-password"
 ```
 
+**⚠️ Security Note:** Change these default passwords before deploying to production!
+
 ## Using SwarmSpawner
 
 In general, when configuring a Spawner, there is one primary concern to get it working: **Make sure the servers can connect to the Hub**.
@@ -163,8 +165,6 @@ networks:
   jupyterhub_network:
     external: True
 ```
-
-**⚠️ Security Note:** Change these default passwords before deploying to production!
 
 ### 5. Build Docker Image
 
