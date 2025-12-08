@@ -1,0 +1,26 @@
+services:
+  jupyterhub:
+    build: .
+    ports:
+      - "8333:8000"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/mnt/nfs/jupyterhub/volumes:/mnt/nfs/jupyterhub/volumes"
+    networks:
+      - jupyterhub_network
+    environment: 
+      - DOCKER_NETWORK_NAME=jupyterhub_network
+      - CHOWN_HOME=yes
+      - GRANT_SUDO=yes
+      - JUPYTERHUB_API_TOKEN=super-secret-token
+    # Ensure that we execute on a Swarm manager
+    deploy:
+        replicas: 1
+        placement:
+            constraints:
+                - node.role == manager
+    restart: unless-stopped
+      
+networks:
+  jupyterhub_network:
+    external: true
