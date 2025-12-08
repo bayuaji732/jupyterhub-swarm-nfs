@@ -269,5 +269,5 @@ MIT License - feel free to use and modify for your needs.
 ## References
 
 - [JupyterHub Documentation](https://jupyterhub.readthedocs.io/)
-- [SwarmSpawner Documentation](https://github.com/jupyterhub/swarmspawner)
+- [SwarmSpawner Documentation](https://jupyterhub-dockerspawner.readthedocs.io/en/latest/spawner-types.html#swarmspawner)
 - [Docker Swarm Documentation](https://docs.docker.com/engine/swarm/)
